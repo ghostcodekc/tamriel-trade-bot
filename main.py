@@ -47,8 +47,8 @@ try:
                 print("Item Found: " + str(itemname))
                 item = dfs[1][['Item', 'Location', 'Price']]
                 # send email
-                message = 'Subject: We found an Item! \n\nTamriel-Trade-Bot\n\n{items}\n\nYou will no longer get e-mails about this item unless you restart the application'.format(
-                    items=item)
+                message = 'Subject: We found an Item! \n\nTamriel-Trade-Bot\n\nSearch URL: {searchurl}\n\n\n{items}\n\nYou will no longer get e-mails about this item unless you restart the application'.format(
+                    items=item, emailurl=url)
                 context = ssl.create_default_context()
                 with smtplib.SMTP(smtp_server, port) as server:
                     server.ehlo()  # Can be omitted
